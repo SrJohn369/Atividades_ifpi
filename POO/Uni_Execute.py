@@ -1,19 +1,24 @@
 from Universidades import *
+import os
 
 # --- Universidades
-universidade = [
+universidades = [
     Universidade("UFPR", "Universidade Federal do Paraná", "Publica"),
     Universidade("Unila", "Universidade Federal da Integração Latino-Americana", "Privada"),
     Universidade("UTFPR", "Universidade Tecnológica Federal do Paraná", "Publica"),
     Universidade("UEMS", "Universidade Estadual do Mato Grosso do Sul", "Privada")]
 # --- Alunos
-aluno = [
-    Aluno("123.456.789-10", "Lucas da Silva", "15/02/1998", 780, matricula_uni_priv=True),
-    Aluno("987.654.321-20", "Beatriz Oliveira", "10/07/2001", 820, matricula_uni_priv=True),
-    Aluno("456.789.123-30", "Rafael Santos", "03/11/1995", 750, matricula_uni_publica=True),
-    Aluno("321.654.987-40", "Júlia Ferreira", "27/05/2000", 790, matricula_uni_publica=True)]
+alunos = [
+    Aluno("888.888.888-88", "Juliana Costa", "08/08/2007", 760, matricula_uni_priv=True),
+    Aluno("999.999.999-99", "Fernando Pereira", "09/09/2008", 830, matricula_uni_publica=True),
+    Aluno("000.000.000-00", "Patrícia Lima", "10/10/2009", 700, matricula_uni_priv=True),
+    Aluno("123.456.789-00", "Rafaela Mendes", "11/11/2010", 780, matricula_uni_publica=True),
+    Aluno("987.654.321-00", "Gabriel Fernandes", "12/12/2011", 820, matricula_uni_priv=True),
+    Aluno("456.789.123-00", "Isabela Santos", "13/01/2012", 760, matricula_uni_publica=True),
+    Aluno("789.123.456-00", "Bruno Oliveira", "14/02/2013", 790, matricula_uni_priv=True),
+    Aluno("321.654.987-00", "Amanda Costa", "15/03/2014", 800, matricula_uni_publica=True)]
 # --- Cursos
-curso = [
+cursos = [
     Curso(1, "Engenharia Civil", 5, 50, 750),
     Curso(2, "Medicina", 6, 40, 850),
     Curso(3, "Administração", 4, 60, 650),
@@ -26,7 +31,75 @@ curso = [
     Curso(10, "Economia", 4, 60, 670)]
 
 
-curso[0].cadastra_aluno(aluno[0])
-curso[0].cadastra_aluno(aluno[2])
-test = curso[0]
-print(test)
+def aluno():
+    def methods(instancia):
+        while True:
+            os.system('cls')
+            print(
+                """
+                1 - Solicitar Entrada
+                2 - Efetivar Matricula
+                3 - Solicitar Transferencia
+                999 - Voltar"""
+            )
+            try:
+                opt_func = int(input("Opção:\t"))
+                if opt_func == 1:
+                    pass
+                elif opt_func == 2:
+                    pass
+                elif opt_func == 3:
+                    pass
+                elif opt_func == 999:
+                    break
+            except:
+                print(f"Valor inválido, apenas 1-3 ou 999. aperte enter tecla para tentar novamente...")
+                input()
+
+    while True:
+        os.system('cls')
+        print("Instancias de alunos:\n")
+        for i, aluno in enumerate(alunos):
+            print(f"{i} - Aluno: {alunos[i].nome} \tCPF: {alunos[i].cpf} \tENEM: {alunos[i].pont_enem}")
+        print()
+        print("999 - Voltar")
+        try:
+            opt_aluno = int(input("Opção:\t"))
+            if opt_aluno != 999:
+                methods(alunos[opt_aluno])
+            else:
+                break
+        except:
+            print(f"Valor inválido, apenas 0-{len(alunos)-1}. aperte enter tecla para tentar novamente...")
+            input()
+
+
+def main():
+    while True:
+        os.system('cls')
+        print(
+            """Menu de Testes
+            Escolha a Instância:
+            1 - Alunos
+            2 - Universidade
+            3 - Cursos
+            4 - Finalizar """
+        )
+        try:
+            opt = int(input("Opção:\t"))
+            if opt == 1:
+                aluno()
+            elif opt == 2:
+                pass
+            elif opt == 3:
+                pass
+            elif opt == 4:
+                print('Finalizado!')
+                break
+        except:
+            print("Valor inválido, apenas 1-4. aperte enter tecla para tentar novamente...")
+            input()
+
+
+if __name__ == '__main__':
+    main()
