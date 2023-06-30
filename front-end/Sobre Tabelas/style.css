@@ -1,0 +1,50 @@
+/*-------Para tabela toda-------*/
+table
+    {
+        border-collapse: collapse;
+        margin: auto;
+    }
+table.formatada
+    {
+        width: 250px;
+        height: 250px;
+    }
+.formatada .black>tr:nth-child(even) td:nth-child(odd)
+{background-color: black;}
+.formatada .white>tr:nth-child(odd) td:nth-child(even)
+{background-color: black;}
+
+/*-------Para th, td e tr-------*/
+td, th
+    {
+        border: 1px solid black; 
+        padding: 5px;
+        padding-left: 5px;
+    }
+td.centralizar{text-align: center;}
+th.semBorda{border: none;}
+
+.peça>tr:nth-child(1) td:nth-child(2n+1),
+.peça>tr:nth-child(2) td:nth-child(2n),
+.peça>tr:nth-child(3) td:nth-child(2n+1)
+    {
+        background-image: url(/imagens/circulo_azulll.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+.peça_vermelha>tr:nth-child(6) td:nth-child(2n),
+.peça_vermelha>tr:nth-child(7) td:nth-child(2n+1),
+.peça_vermelha>tr:nth-child(8) td:nth-child(2n)
+    {
+        background-image: url(/imagens/circulo\ vermelho.jpg);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+.zebrado>tr:nth-child(even){background-color: cadetblue;}
+.zebrado>tr:nth-child(odd){background-color: darkgray;}
+/*------------------------*/
+.centraliza{text-align: center;}
+.top{vertical-align: top;}
+/*------------------------*/
