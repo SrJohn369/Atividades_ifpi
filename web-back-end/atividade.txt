@@ -1,0 +1,25 @@
+Contrato da API 
+-----------------------
+-----------------------------------    RESQUEST    -----------------------------------
+PATH                           METHOD      PARAM                   BODY 
+/ambientes                     GET         -                       -                    ok
+/ambientes/criar_ambi          POST        -                       ambiente             ok
+/ambientes/{id}                GET         -                       -                    ok
+/ambientes/{id}/alt_ambi       PUT         -                       -          
+/ambientes/remov_ambi/{id}     DELETE      -                       -          
+/ambientes/{id}/dispositivos   GET         -                       -
+/ambientes/{id}/criar_disp     POST        -                       dispositivo
+/ambientes/{id}/mover_disp     PUT         -                       -
+/ambientes/remov_disp/{id}     DELETE      -                       -
+
+------------------------------------    RESPONSE   -----------------------------------
+PATH                              STATUS      BODY                       DESCRIPITION
+/ambientes                        200         [ambientes]              obter lista de todos os ambientes
+/ambientes/criar_ambi             201         ambiente                 criar um ambiente
+/ambientes/{id}                   200|404     ambiente/mensagem        obter um ambiente
+/ambientes/{id}/alt_ambi          200|404     ambiente/mensagem        alterar um ambiente
+/ambientes/remov_ambi/{id}        204|404     mensagem                 remover ambiente
+/ambientes/{id}/dispositivos      200|404     [dispositivos]           obter lista de dispositivos
+/ambientes/{id}/criar_disp        201         dispositivo              criar um dispositivo
+/ambientes/{id}/mover_disp        201|404     dispositivo/mensagem     mover um dispositivo
+/ambientes/remov_disp/{id}        204|404     mensagem                 remover um dispositivo
